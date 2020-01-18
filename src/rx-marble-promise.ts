@@ -9,7 +9,7 @@ const multiplyByTwoAsync = (number: number): Promise<number> =>
   Promise.resolve(number * 2);
 
 type Options = { multiplyByTwo: MultiplyByTwoAsync };
-export const rxWithPromise = (
+export const multiplyByTwo = (
   source$: Observable<number>,
   { multiplyByTwo = multiplyByTwoAsync }: Options = {
     multiplyByTwo: multiplyByTwoAsync

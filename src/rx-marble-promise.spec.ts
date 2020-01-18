@@ -1,5 +1,5 @@
 import { TestScheduler } from "rxjs/internal/testing/TestScheduler";
-import { rxWithPromise } from "./rx-marble-promise";
+import { multiplyByTwo } from "./rx-marble-promise";
 import { Observable, of } from "rxjs";
 
 describe("RxMarbles Promise", () => {
@@ -15,9 +15,8 @@ describe("RxMarbles Promise", () => {
           of(value * 2);
 
         expectObservable(
-          rxWithPromise(source$, { multiplyByTwo: multiplyByTwoAsync })
+          multiplyByTwo(source$, { multiplyByTwo: multiplyByTwoAsync })
         ).toBe("b-d-e", values);
-        expectObservable(rxWithPromise(source$)).toBe("b-d-e", values);
       });
     });
   });
